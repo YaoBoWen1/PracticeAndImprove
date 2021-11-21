@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懒加载</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="list">
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+        <img src="./load.png" datasrc='213' data-src="https://pics1.baidu.com/feed/0b7b02087bf40ad1a62f614db1b1f6d7abeccef8.jpeg?token=5b1fb714695cc37c4ac2ea68a2abe374" />
+    </div>
+    <style>
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .list img{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+    </style>
+</body>
+</html>
