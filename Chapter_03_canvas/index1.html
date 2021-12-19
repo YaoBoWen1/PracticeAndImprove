@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="800" height="800"></canvas>
+  <script>
+    /*
+      canvas 相当于一个 img标签， 不同是canvas支持在画布上自定义绘画
+      id width height 都不是必须属性
+    */
+    let canvas = document.getElementById('myCanvas')
+    // 绘制2d画布
+    let ctx = canvas.getContext('2d')
+
+    // 设置线宽
+    ctx.lineWidth = 1
+    // 设置线颜色
+    ctx.strokeStyle = 'black'
+    // 设置填充色
+    ctx.fillStyle = 'purple'
+
+    ctx.moveTo(100,100)
+    ctx.lineTo(500,100)
+    ctx.lineTo(500,500)
+    ctx.lineTo(100,500)
+    ctx.closePath()
+    ctx.stroke()
+
+    var flag = false
+    // 鼠标按下
+    canvas.onmousedown =  function(e){
+      ctx.beginPath(); //重置定义好的内容
+      flag = true
+      console.log(e)
+    }
+
+    // 鼠标松开
+    canvas.onmouseup =  function(e){
+      flag = false
+      console.log(e)
+    }
+
+    // 鼠标移动
+    canvas.onmousemove =  function(e){
+      if(!flag) return
+      console.log(e)
+      ctx.lineTo(e.clientX,e.clientY)
+      ctx.stroke()
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
