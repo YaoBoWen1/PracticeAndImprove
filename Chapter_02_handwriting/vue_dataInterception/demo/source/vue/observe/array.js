@@ -3,7 +3,7 @@ import {defineReactive} from './Observer'
 // 在原生的方法外面包一层，在调用的时候添加判断，若是对象则健康
 
 let oldArrayMethod = Array.prototype
-// 把原有的方法复制一份 Object.create复制的比较干净
+// 把原型复制一份 Object.create复制的比较干净
 export let arrayMethods = Object.create(oldArrayMethod)
 
 // 需要拦截的原生方法

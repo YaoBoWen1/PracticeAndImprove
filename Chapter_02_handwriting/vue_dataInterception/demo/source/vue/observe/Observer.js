@@ -5,7 +5,7 @@ import {arrayMethods} from './array'
 export function defineReactive(data, key, value){
     // 若value是一个对象进行递归
     if(typeof value === 'object'){
-        observer(value)
+        observer(value)//如果是对象，最终指向下面的Observer类
     }
     // 监听到data上有动态添加的key，进行自定义处理
     Object.defineProperty(data, key, {
@@ -34,7 +34,7 @@ class Observer {
         for (let key in data) {
             // 属性 => 响应式
             let value = data[key]
-            defineReactive(data, key, value)
+            defineReactive(data, key, value)//监听/劫持/自定义操作
         }
         // let keys = Object.keys(data)
         // for (let i = 0; i < keys.length; i++) {
