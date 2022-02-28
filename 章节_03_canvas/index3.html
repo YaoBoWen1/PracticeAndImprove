@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="main" style="padding-top:100px">
+    <canvas id="myCanvas" width="600" height="370"></canvas>
+    <div class="btn play">开始</div>
+    <div class="btn stop">结束</div>
+</div>
+<script>
+  //行驶坐标点
+  var arr = [{x:0,y:0},{x:360,y:200}]
+  let canvas = $('#myCanvas'), play = $('.play'), stop = $('.stop')
+  console.log(canvas.offsetTop)
+  let speed = 2 //速度
+  let timer
+  let flag = false
+  let stopMove = true
+  //图片预加载
+  var img = new Image();
+  img.src='img/person.png'; //加载图片的地址
+  // img.onload = function(){ //图片加载后才执行
+  //     ctx.drawImage(img,arr[0].x,arr[0].y,30,30);
+  // };
+  let ctx = canvas.getContext('2d')
+  function $(name){
+    return document.querySelector(name)
+  }
+  play.onclick = function(e){
+    console.log(e)
+    if(flag)return
+    plays()
+    flag = true
+  }
+  stop.onclick = function(e){
+    console.log(e)
+    flag = false
+    clearInterval(timer)
+  }
+  function plays(){
+    //定时器 每个一秒执行一次绘制
+    timer = setInterval(draw,200) 
+  }
+  function draw(){
+    //清除画布内容
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    console.log(arr[0].x,arr[0].y)
+
+    
+ 
+    if(arr[0].x === 60){
+      arr[0].y += speed
+      stopMove = false
+    }
+    if(arr[0].y === 130){
+      stopMove = true
+    }
+    stopMove && move()
+
+    //绘制图片到画布
+    // ctx.drawImage(img,x,y,w,h)
+    ctx.drawImage(img,arr[0].x,arr[0].y,30,30)
+
+    //行驶的轨迹
+    ctx.strokeStyle = 'green'
+    ctx.lineTo(arr[0].x,arr[0].y)
+    ctx.stroke()
+  }
+  function move(){
+    if(arr[0].x < arr[1].x) arr[0].x += speed
+    if(arr[0].y < arr[1].y) arr[0].y += speed
+  }
+
+</script>
+</body>
+</html>
