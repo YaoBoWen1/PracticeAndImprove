@@ -5,14 +5,13 @@
     </div>
     <div class="main">
       <div class="left"><leftBar/></div>
-      <div class="right" id="subApp">
-        <router-view />
-      </div>
+      <div class="right" id="subApp"></div>
     </div>
     
   </div>
 </template>
 <script>
+import NProgress from 'nprogress'
 import navTop from '@/components/navTop.vue'
 import leftBar from '@/components/leftBar.vue'
 export default {
@@ -20,6 +19,25 @@ export default {
   components: {
     navTop,
     leftBar
+  },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
+  watch: {
+    isLoading (val) {
+      if (val) {
+        NProgress.start()
+      } else {
+        this.$nextTick(() => {
+          NProgress.done()
+        })
+      }
+    }
+  },
+  created () {
+    NProgress.start()
   },
 };
 </script>
