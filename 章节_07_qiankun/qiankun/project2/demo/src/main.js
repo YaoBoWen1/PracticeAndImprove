@@ -10,9 +10,9 @@ Vue.config.productionTip = false;
 let router = null;
 let instance = null;
 function render(props = {}) {
-  const { container } = props;
+  const { container,routerBase } = props;
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/app-vue/' : '/',
+    base: window.__POWERED_BY_QIANKUN__ ? routerBase : '/',
     mode: 'history',
     routes,
   });
@@ -32,8 +32,16 @@ if (!window.__POWERED_BY_QIANKUN__) {
 export async function bootstrap() {
   console.log('[vue] vue app bootstraped');
 }
+// 从生命周期 mount 中获取通信方法，props默认会有onGlobalStateChange和setGlobalState两个api
 export async function mount(props) {
   console.log('[vue] props from main framework', props);
+  /*进阶部分开始 主子通信*/
+  props.onGlobalStateChange((state, prev) => {
+    // state: 变更后的状态; prev 变更前的状态
+    console.log('vue子应用打印的参数:',state, prev);
+  });
+  props.setGlobalState({user:{name:'李四'}});
+  /*进阶部分结束 主子通信*/
   render(props);
 }
 export async function unmount() {

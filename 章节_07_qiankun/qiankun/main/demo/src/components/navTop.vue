@@ -11,7 +11,7 @@
     <el-menu-item><div style="width:190px;font-size:18px;">乾坤DEMO~</div></el-menu-item>
     <el-menu-item index="1">主应用</el-menu-item>
     <el-submenu index="2">
-      <template slot="title"><a href="app-vue">子应用1</a></template>
+      <template slot="title"><a href="/sub-vue">子应用1</a></template>
       <el-menu-item index="2-1" disabled>选项1</el-menu-item>
       <el-menu-item index="2-2" disabled>选项2</el-menu-item>
       <el-submenu index="2-4">
