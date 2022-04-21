@@ -18,6 +18,12 @@
 * 常用功能
   - 懒加载
   - d3+jsplumb数据可视化
+* qiankun微前端/微服务
+  - 主应用：vue cli + element ui
+  - 子应用：vue cli + router + vuex
+  - 延伸：
+    - 市面上常见的案例都是基于react, 所以特此整理了一波vue + qiankun的案例
+    - 市场上很火的，一键开启qiankun微服务的有现成的框架叫 umijs,其框架上基于react的，对react开发人员比较友好
 ###
 后续将继续更新...
 -----------------

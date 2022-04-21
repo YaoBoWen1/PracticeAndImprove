@@ -10,7 +10,7 @@
   - 子应用A里，跳转到基座（此处不是无感刷新，后续再研究...原因:路由规则被乾坤定义沙箱代替）
 * setDefaultMountApp('/sub-vue'):设置默认加载的子应用
 * 应用切换时：无感刷新
-  - 文件位置：main=>demo=>src=>components=>bavTop.vue
+  - 文件位置：main=>demo=>src=>components=>navTop.vue
 * 应用切换时：头部加载动画
   - 文件位置：main=>demo=>src=>App.vue+main.js
 ###
@@ -21,7 +21,17 @@
   - onGlobalStateChange：注册 观察者 函数 - 响应 globalState 变化，在 globalState 发生改变时触发该 观察者 函数。
   - offGlobalStateChange：取消 观察者 函数 - 该实例不再响应 globalState 变化。
   - 文件位置：commit记录=>提交描述：'官方提供的主子应用通信'这个时期的项目=>main/project2=>demo=>src=>main.js
+* 初步应用在项目的主子通信
+  - 基座的文件位置
+    - main => demo => src => store.js 封装官方的方法
+    - main => demo => src => micro-apps.js 下发主应用的数据给子
+    - main => demo => src => components => navTop.vue 获取变化后的state
+  - 子应用1文件位置
+    - main => demo => src => main.js mouted初始化时，集成乾坤的核心props到vuex
+    - main => demo => src => store => global.js 封装关于主子通信的逻辑到vuex
+    - main => demo => src => views => home.vue 通过vuex获取变化后的state
 
+  
 ###
 后续将继续更新...
 -----------------
