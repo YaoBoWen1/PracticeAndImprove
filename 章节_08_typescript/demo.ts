@@ -1,10 +1,14 @@
 /*  
- 开篇
+
  场景：/bin/sh: ts-node: command not found
  解决：npm install -g ts-node
 
  npm install -g typescript
  tsc demo.ts 可转成 demo.js
+
+ ts-node是编译+执行,tsc是编译
+ 
+ 大纲
  定义变量
  定义数组
  元祖
