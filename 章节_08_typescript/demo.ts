@@ -3,11 +3,12 @@
  场景：/bin/sh: ts-node: command not found
  解决：npm install -g ts-node
 
- npm install -g typescript
- tsc demo.ts 可转成 demo.js
+ 1 npm install -g ts-node
+   ts-node demo.ts
+ 2 npm install -g typescript
+   tsc demo.ts 可转成 demo.js
+ 比较：ts-node是编译+执行,tsc是编译
 
- ts-node是编译+执行,tsc是编译
- 
  大纲
  定义变量
  定义数组
