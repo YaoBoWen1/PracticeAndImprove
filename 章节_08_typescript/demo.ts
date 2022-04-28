@@ -72,6 +72,7 @@ let obj1:Phone = {
 function fuc(a:string,b:string):string[]{
     return ['1','2']
 }
+fuc('1','2')
 function fuc1(a:string,b:string):number[]{
     return [Number(a),Number(b)]
 }
@@ -109,7 +110,6 @@ fuc4<number|string|object>(1,'2',{name:1})
 function func5(a:number,b:number,c?:object):string{ //?:可选参数
  return a+b+''
 }
-
 //函数检查类型
 // 场景：项目有一个公共函数传参类型（SearchFun），后续的函数继承这个接口后，都得按照这个规范来
 interface SearchFun{
@@ -118,6 +118,17 @@ interface SearchFun{
 let fuc6:SearchFun = function(c:string, d:string):boolean{
     return c>d
 }
+let fuc7 = (type: 'chart' | 'board', dataStr: string):number => {
+    if (type === 'board') {
+        console.log(type)
+      return 1
+    } else {
+        console.log(type)
+      return 2
+    }
+}
+//第一个参数只能输入'chart' 或 'board'
+fuc7('board','1')
 
 //定义类
 //修饰符  static  public  private
